@@ -1,0 +1,943 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, #003346, rgb(202, 240, 248));
+  width: 100%;
+  cursor: default;
+  /*display: flex;*/
+  flex-direction: column;
+  padding: 0;
+}
+
+#photo-acceuil {
+  height: 100vh;
+  /* la page d'acceuil aura une image de fond en plus de la barre de navigation */
+  background: url(../images/img2.jpg);
+  background-size: cover;
+  display: flex;
+}
+
+/* style des titres et paragraphes */
+.mes-titres-sec {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: italic;
+  padding-left: 1em;
+  color: rgb(211, 211, 211);
+  font-weight: 600;
+}
+
+.mes-titres-sec:hover {
+  background-color: #00161f;
+}
+
+.mes-para {
+  color: #00161f;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: justify;
+  font-size: 1.11em;
+  font-weight: 600;
+}
+
+/******************************************* Barre de navigation *******************************************/
+
+/* style du mot covid sur la barre de navigation */
+nav .covid {
+  float: left;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* syle de la barre de navigation */
+.nav-bar {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: linear-gradient(to right, #003346, rgb(202, 240, 248));
+  padding: 0% 11% 0% 11%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  right: 0;
+  position: fixed;
+  padding: 1%;
+  z-index: 20;
+}
+
+.links {
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+.link {
+  list-style: none;
+  text-transform: uppercase;
+  margin: auto 1em;
+  font-weight: 700;
+}
+
+.link > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 0;
+}
+
+.link:hover > a {
+  /* color: rgb(202, 240, 248);
+     */
+  color: #003346;
+}
+
+/* le lien de la barre de navigation sera en bleu quand on est dans la page correspondnate  */
+#acceuil > a {
+  color: #00161f;
+}
+
+#traitement > a {
+  color: #00161f;
+}
+
+#gesteBarriere > a {
+  color: #00161f;
+}
+
+#covid-en-alg > a {
+  color: #00161f;
+}
+
+#forms > a {
+  color: #00161f;
+}
+
+#index > a {
+  color: #00161f;
+}
+
+#stat > a {
+  color: #00161f;
+}
+
+#variant > a {
+  color: #00161f;
+}
+
+#symptomes > a {
+  color: #00161f;
+}
+
+/* ****************************************************** fin de la barre de navigation ************************************** */
+
+/* la classe principale permet d'ajouter un padding a droite et a gauche de chaque file.html pour laisser un petit vide */
+.principale {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+}
+
+/* *************************************** style traitement.html ************************************* */
+/* la 1ere photo du fichier traitement : effet d'images grisées et la couleur se révèle lors du hover sur la photo plus un petit effet d'ombre  */
+.image-traitement {
+  height: 270px;
+  width: 60%;
+  box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 40px;
+  float: right;
+  border-radius: 20vh 10vh;
+  filter: grayscale(100%);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.image-traitement:hover {
+  filter: grayscale(0);
+}
+
+/* style de la 2 eme photo de traitement.html :Une image avec un zoom qui permettra de grossir l'image au hover et d'ajpouter en meme temps un cadre et un ombre */
+.image2-traitement {
+  height: 270px;
+  width: 60%;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  margin: 0vh 30vh;
+  border-radius: 20vh;
+}
+
+.image2-traitement:hover {
+  border: 2px solid #00161f;
+  box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+/* style du tableau */
+.links-traitement {
+  color: rgb(211, 211, 211);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: justify;
+  font-size: 1.05em;
+  text-decoration: none;
+}
+
+.links-traitement:hover {
+  color: #00161f;
+}
+
+.section-tab-vaccin {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.mon-tab {
+  border: 1px solid rgb(211, 211, 211);
+  text-align: left;
+  padding: 5px;
+}
+
+/* style de la 3 eme photo :un effet de rotation en 3d au hover */
+.image-traitement3 {
+  height: 50vh;
+  width: 50vh;
+  float: right;
+  border-radius: 35%;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.image-traitement3:hover {
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+
+/* ******************************* fin de style de traitement.html *********************************************** */
+
+/* ************************** style de GesteBarriere.html ************************** */
+/* style de la gallerie de photo :en flex avec effet de zoom dans une image à l’intérieur d’un bloc sans changer la taille du bloc en lui meme en plus, au clique sur chaque photo on se trouvera dans le paragraphe correspendant a cette derniere grace au tag <a> */
+.container-img {
+  display: block;
+  overflow: hidden;
+  border: hidden;
+}
+
+.container-img img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container-img:hover img {
+  transform: scale(1.2);
+}
+
+.main {
+  display: flex;
+}
+
+/* liste ordonnée chque ligne se grossie au hover */
+
+.list-gestes {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: justify;
+  font-size: 1.05em;
+  text-decoration: none;
+}
+
+.list-gestes:hover {
+  font-size: 1.15em;
+}
+
+/*  image avec un effet d'ombre dans gesteBarriere.html */
+.image-gb {
+  height: 270px;
+  width: 60%;
+  box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 50px 0 20px 30px;
+  float: right;
+  /* border-radius: 10vh; */
+}
+
+/* ******************************** fin de style de GesteBarriere.html **********************************************/
+
+/* ****************************************** footer ********************************************** */
+footer {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  flex-shrink: 0;
+  width: 100%;
+  /* background-color: #003346; */
+  background: linear-gradient(to left, rgb(80, 106, 112), #003346);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  bottom: 0;
+  position: relative;
+}
+
+.mes-titres-footer {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: italic;
+  padding-left: 1em;
+  color: rgb(211, 211, 211);
+  font-weight: 600;
+}
+
+.contenu-footer {
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.none {
+  list-style: none;
+}
+
+.bloc-footer-services {
+  margin: 50px 100px 50px 100px;
+}
+
+.link-footer {
+  list-style: none;
+  text-transform: uppercase;
+  margin: auto 1em;
+}
+
+.links-footer {
+  margin: 0 0 0 auto;
+}
+
+.link-footer:hover > a {
+  color: rgb(202, 240, 248);
+}
+
+.link-footer > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 0;
+}
+
+/* ********************************** fin footer ******************************************* */
+
+/* **************************************** formulaire ************************************************** */
+form {
+  background-color: #296f88;
+  /* background: linear-gradient(to left, rgb(80, 106, 112), #003346); */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+form .separation {
+  width: 100%;
+  height: 1px;
+  background-color: thistle;
+}
+
+form .corps-formulaire {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+form .corps-formulaire .groupe {
+  position: relative;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+form .corps-formulaire .gauche .groupe input {
+  margin-top: 5px;
+  padding: 10px 5px 10px 30px;
+  border: 1px solid rgb(3, 38, 49);
+  outline-color: thistle;
+  border-radius: 5px;
+}
+
+form .corps-formulaire .gauche .groupe i {
+  position: absolute;
+  left: 0;
+  top: 25px;
+  padding: 9px 8px;
+  color: rgb(3, 38, 49);
+}
+
+form .corps-formulaire .droite {
+  margin-left: 40px;
+}
+
+form .corps-formulaire .droite .groupe {
+  height: 100%;
+}
+
+form .corps-formulaire .droite .groupe textarea {
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #f8f8f8e3;
+  border: 2px solid rgb(3, 38, 49);
+  outline: none;
+  border-radius: 5px;
+  resize: none;
+  height: 72%;
+}
+
+form .pied-formulaire button {
+  margin-top: 10px;
+  background-color: rgb(3, 38, 49);
+  color: white;
+  font-size: 15px;
+  border: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+form .pied-formulaire button:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 920px) {
+  form .corps-formulaire .droite {
+    margin-left: 0 px;
+  }
+}
+
+.formulaire {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+
+/***********************************Covid-19-en-Algerie****************************************************/
+
+#f1 {
+  /*ici on organise la taille du cadre qui contient les informations sur l'algerie*/
+  border: 3px solid rgb(90, 68, 110);
+  /*on a ajouter une couleur pour le fond*/
+  height: 140vh;
+  width: 45vh;
+  float: right;
+}
+
+#f1:hover {
+  /*la couleur du fond change qaund vous mettez la souris dessus*/
+
+  background-color: rgb(131, 168, 175);
+}
+
+.mes-para-aside {
+  color: #00161f;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: justify;
+  font-weight: 600;
+}
+
+/*la partie section de la page qui est de coté gauche */
+.section {
+  float: left;
+  width: 75%;
+}
+
+#aside {
+  /*la partie supp qui represente la carte d'identite de l'algerie*/
+  float: right;
+  width: 20%;
+}
+
+#f2 {
+  /*ici on a definie le titre qui est avec le cadre du aside*/
+  color: rgb(59, 58, 71);
+  text-align: center;
+  text-decoration: overline;
+  background: linear-gradient(to right, #003346, rgb(202, 240, 248));
+}
+
+#f3 {
+  /*le carde dégrader des titres des vagues */
+  background: linear-gradient(to right, #003346, rgb(202, 240, 248));
+}
+
+#map1 {
+  /*la mape de l'algerie en ajoutant qlq dimention pour les border*/
+  border: 1px solid rgb(207, 195, 207);
+  border-radius: 10vh;
+  filter: grayscale(50%);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#para {
+  /*l'ecriture des informations de la carte d'identite de l'algerie */
+  color: #00161f;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: justify;
+  font-size: 1.11em;
+  font-weight: 300;
+}
+
+.t {
+  /*ici c est le cadre du titre secondaire qui est bilan*/
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: italic;
+  padding-left: 7em;
+  color: rgb(158, 137, 137);
+  font-weight: 200;
+}
+
+.t:hover {
+  /*un arrier qui est dynamique ca changes de couleur  quand vous mettez la souris dessus */
+  background-color: #324c57;
+}
+
+/*on arrange la position du slide*/
+.slider {
+  width: 434px;
+  overflow: hidden;
+  margin: 0px 240px auto;
+}
+
+.slide {
+  /*la classe qui continet tout les images du slide qui on la meme position*/
+  border: 2px solid linear-gradient(to right, #003346, rgb(202, 240, 248));
+  float: left;
+  position: relative;
+  width: 434px;
+  margin: 10px auto;
+}
+
+.slide:hover {
+  background: linear-gradient(to right, #003346, rgb(202, 240, 248));
+}
+
+.slide img {
+  /*la taille de chaque image du slide*/
+  width: 100%;
+  height: auto;
+}
+
+.slides {
+  /*ici on a fait le calcul de la taille d une image x le nombre d image */
+  width: calc(434px * 3);
+  animation: glisse 20s infinite;
+  /*on indique le temps qu'elle prendra chaque image pour qu'elle soit defiler*/
+}
+
+/*c'est la partie principale du slide ici on devise les pourcentage qui correspend 
+le degré du glissement de l'image et pour le translatex , par exemple 
+transtalex(0) il reste sur la premiere page ,translatex(434) il avance d'une
+image d'ailleure la largeur c'est 434 et translatex(868)c'est la somme de deux la latgeurs de
+deux images pour arriver a la troisième et le 100% elle revient au point de depart ainsi de suite */
+@keyframes glisse {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(-434px);
+  }
+
+  43% {
+    transform: translateX(-434px);
+  }
+
+  66% {
+    transform: translateX(-868px);
+  }
+
+  76% {
+    transform: translateX(-868px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.circle {
+  /*le cercle*/
+  width: 200px;
+  height: 200px;
+  background: url(../images/aliment.PNG);
+  /*ici pour réalisser l'image ronde et avoir un texte qui entoure l'image
+  on doit mettre le lien de l'image dans l'url ici*/
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  margin: 30px;
+}
+
+.container {
+  /*la partie fixe des images des wilayas*/
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-spacing: 30px 50rem;
+}
+
+.card {
+  /*represente le cadre de l'image*/
+    position: relative;
+  left: -6%;
+  width: 300px;
+  height: 280px;
+  transition: 0.3s ease-out;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7); */
+  border-spacing: 30px 50rem;
+} 
+
+.card .imgbox {
+  /*ca concerne les images et leurs tailles*/
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  left: 0;
+}
+
+.card .imgbox img {
+  /*ici on fait la combinison entre l image et le cadre on vas organiser la partie des informations avec l'image  */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125%;
+  display: block;
+  transition: 0.5s;
+}
+
+.card .content {
+  /*le cadre qui continet les informations des wilayas*/
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  padding: 12px;
+  background: rgba(172, 160, 160, 0.8);
+  transition: all 0.5s cubic-bezier(0.48, -0.28, 0.41, 1.4);
+  overflow: hidden;
+}
+
+.card:hover .content {
+  /*la partie ou on metrise l'apparence des informations des wilayas
+  on mettant la sourie sur l'image ca sort la partie d'info*/
+  width: 100%;
+  height: 75%;
+  left: 0;
+  bottom: 0;
+}
+
+.card:hover .content p {
+  /*l'ecriture des informations des wilayas*/
+  transform: translate(0);
+  opacity: 1;
+}
+
+.card:hover {
+  /*pour avoir l'arriere de l'image éluminé quand on mets la souris dessus*/
+  box-shadow: 0 0 5em rgba(184, 64, 188, 0.4);
+}
+/**********************fin covid-a9-en-algerie*********************************/
+
+/************************** le contenu de l'acceuil**********************************/
+.statnote2 {
+  /**le titre lumineux**/
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: italic;
+  padding-left: 1em;
+  color: rgb(38, 38, 138);
+  font-weight: 800;
+  letter-spacing: 15px;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 2px linear-gradient(transparent, #0008);
+  line-height: 0.9em;
+  outline: none;
+  animation: animate 3s linear infinite;
+  /*le principe du titre lumineux*/
+}
+
+.circle1 {
+  /*l'image ronde*/
+  width: 200px;
+  height: 200px;
+  background: url(../images/covid.PNG);
+  /*ici pour réalisser l'image ronde et avoir un texte qui entoure l'image
+  on doit mettre le lien de l'image dans l'url ici*/
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  /*la forme du cercle de l'image*/
+  margin: 30px;
+}
+
+.circle1:hover {
+  /*pour avoir l'arriere de l'image éluminé quand on mets la souris dessus*/
+  box-shadow: 0 0 5em rgba(6, 6, 167, 0.4);
+}
+
+.circle2 {
+  /*la meme chose avec le circle1 c'est juste qu'on a changé l'image*/
+  width: 200px;
+  height: 200px;
+  background: url(../images/wohan.PNG);
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  margin: 30px;
+}
+
+.circle2:hover {
+  box-shadow: 0 0 5em rgba(6, 6, 167, 0.4);
+}
+
+/***************************************************fin contenue d'acceuil*******************************/
+/***********************************************************statistique****************************************/
+.statnote {
+  /**le titre lumineux**/
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: italic;
+  padding-left: 1em;
+  color: rgb(61, 61, 106);
+  font-weight: 600;
+  letter-spacing: 10px;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+/*ici c'est l'avancementde la couleur sur le titre lumineux*/
+@keyframes animate {
+  0% {
+    color: #483e59;
+    box-shadow: none;
+  }
+
+  100% {
+    color: #fff;
+    box-shadow: 0 0 10px #063d52, 0 0 20px #637c86, 0 0 40px #637c86,
+      0 0 80px #637c86, 0 0 160px #637c86;
+  }
+}
+
+/*la carte du monde*/
+#map2 {
+  border: 0px solid rgb(86, 73, 137);
+  border-radius: 5vh;
+  width: 90%;
+  margin: -5px 40px;
+  /*quelques modification pour le cadre de la carte*/
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.tab-monde {
+  /*tableau des pays */
+  background: linear-gradient(to right, #356775, rgb(113, 132, 136));
+  border: 1px solid rgb(202, 240, 248);
+  text-align: center;
+  padding: 4px;
+}
+
+.tab-monde:hover {
+  /*l'arrier lumineuse de la table */
+  box-shadow: 0 0 5em rgba(220, 197, 28, 0.4);
+}
+/**********************************************fin statistique****************************************************************/
+/************************************************************symptomes**********************************************/
+#caroussel {
+  width: 500px;
+  overflow: hidden;
+  border: 2px solid snow;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.images {
+  display: flex;
+  animation-duration: 10s;
+  animation-name: mesImages;
+  animation-iteration-count: infinite; /*pr que l'animation ne s'arrete pas*/
+}
+
+@keyframes mesImages {
+  0% {
+    transform: translateX(0 /*formule:x=0,x=x-500*/); /*1ere image*/
+  }
+  25% {
+    transform: translateX(
+      -500px
+    ); /*on s'est arrange pour que les images aient la meme largeur*/ /*2eme image 0-500*/
+  }
+  50% {
+    transform: translateX(-1000px);
+  }
+  75% {
+    transform: translateX(-1500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.apercu {
+  display: flex;
+  column-count: 2;
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  padding: 150px 200px 5px 200px;
+}
+
+.noms {
+  padding: 20px 200px 5px 200px;
+}
+
+.dangers {
+  padding: 20px 200px 5px 200px;
+}
+
+.personne {
+  column-count: 2;
+  display: flex;
+}
+
+.personne-contagieuse {
+  column-count: 2;
+  display: flex;
+  padding: 20px 200px 5px 200px;
+}
+
+.special {
+  background-color: #9fcbdb;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.special:hover {
+  transform: scale(1.05); /*Pour agrandir le bloc quand il est pointe*/
+}
+
+.types-symptôme {
+  padding: 20px 200px 5px 200px;
+}
+
+.par-age {
+  padding: 20px 200px 5px 200px;
+}
+
+.image {
+  padding: 30px;
+  border-radius: 10px;
+}
+/*****************************************************************fin symptomes********************************************/
+/****************************************************************variants**************************************************/
+h3 {
+  color: rgba(255, 250, 250, 0.925);
+}
+
+.tableau-style {
+  min-width: 400px;
+  width: auto;
+  box-shadow: 0 5px 50px rgba(28, 107, 146, 0.781);
+  cursor: pointer;
+  margin: 50px auto;
+  border: 2px solid rgb(244, 244, 245);
+}
+
+thead #att {
+  background-color: mistyrose;
+  color: rgb(3, 38, 49);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 5px 10px;
+}
+
+tbody tr,
+td,
+th {
+  border: 1px solid rgb(221, 221, 221);
+}
+
+tbody #att1:nth-child(even) {
+  background-color: #ddd; /*Pour avoir une ligne/2 blanche*/
+}
+
+.imgg {
+  border-radius: 20px;
+}
+
+.contener {
+  top: 50%;
+  left: 50%;
+  transform: (-50%, -50%);
+  width: 1400px;
+  padding: 150px 200px 5px 200px;
+  border-radius: 10px;
+}
+
+.cercle {
+  width: 200px;
+  height: 200px;
+  background: url(../images/coronavirus.jpg);
+  background-size: 100% 100%;
+  border-radius: 50%; /*Pour arondir l'image*/
+  float: left;
+  shape-outside: circle();
+  margin: 10px;
+}
+#cont {
+  width: 600px;
+  height: 300px;
+}
+/*****************************************fin variants***********************************************/
